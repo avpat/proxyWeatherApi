@@ -6,9 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Country extends Model
 {
-    protected $guarded = [];
 
-    protected $fillable = ['code', 'name'];
+    protected $fillable = ['code', 'name', 'weather_id'];
 
 
     /**

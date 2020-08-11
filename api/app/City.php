@@ -10,7 +10,6 @@ class City extends Model
 
     protected $fillable = ['country_id', 'city_code', 'name', 'is_capital'];
 
-//    protected $with = ['country'];
     /**
      * we don't need timestamp for city table
      *

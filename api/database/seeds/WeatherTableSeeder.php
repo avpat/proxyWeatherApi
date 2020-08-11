@@ -11,13 +11,6 @@ class WeatherTableSeeder extends Seeder
      */
     public function run()
     {
-//        $rain = App\Rain::all()->pluck('id')->toArray();
-//        $wind = App\Wind::all()->pluck('id')->toArray();;
-//        $snow = App\Snow::all()->pluck('id')->toArray();;
-//        $rain = App\Rain::all()->pluck('id')->toArray();;
-//        $wind = App\Wind::all()->pluck('id')->toArray();;
-//        $snow = App\Snow::all()->pluck('id')->toArray();;
-
-    //    factory(App\Weather::class, 2)->create();
+        factory(App\Weather::class, 10)->create();
     }
 }

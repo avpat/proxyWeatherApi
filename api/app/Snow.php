@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Snow extends Model
 {
-    protected $fillable = ['min_snow', 'max_snow'];
+
+    protected $fillable = ['min_snow', 'max_snow', 'weather_id'];
 
     /**
      * we don't need timestamp for snow table

@@ -6,8 +6,11 @@ use App\Country;
 use Faker\Generator as Faker;
 
 $factory->define(Country::class, function (Faker $faker) {
+    $country = $faker->country;
+
     return [
-       'code'   =>  $faker->countryCode,
-       'name'   =>  $faker->country
+        'code'          =>  strtoupper(substr($country, 0, 2)),
+        'name'          =>  $country,
+        'weather_id'    =>  factory(App\Weather::class)
     ];
 });

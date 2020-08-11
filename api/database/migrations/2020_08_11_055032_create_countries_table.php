@@ -17,8 +17,8 @@ class CreateCountriesTable extends Migration
             $table->bigIncrements('id');
             $table->string('code');
             $table->string('name');
-//            $table->unsignedInteger('address_id');
-//            $table->foreign('address_id')->references('id')->on('addressses')
+            $table->unsignedBigInteger('weather_id');
+            $table->foreign('weather_id')->references('id')->on('weather')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

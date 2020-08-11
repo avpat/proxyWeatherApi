@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Temperature extends Model
 {
-    protected $fillable = ['min_temp', 'max_temp'];
+
+    protected $fillable = ['min_temp', 'max_temp', 'weather_id'];
 
     /**
      * we don't need timestamp for temp table

@@ -11,13 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-//        factory(App\Rain::class, 10)->create();
-//        factory(App\Wind::class, 10)->create();
-//        factory(App\Snow::class, 10)->create();
-//        factory(App\Temperature::class, 10)->create();
-//        factory(App\Cloud::class, 10)->create();
-//        factory(App\Air::class, 10)->create();
-
+        $this->call(WeatherTableSeeder::class);
         $this->call(RainTableSeeder::class);
         $this->call(WindTableSeeder::class);
         $this->call(CloudTableSeeder::class);

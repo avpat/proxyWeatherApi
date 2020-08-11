@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rain extends Model
 {
-    protected $fillable = ['precipitation'];
+
+    protected $fillable = ['precipitation', 'weather_id'];
 
     /**
      * we don't need timestamp for rain table
@@ -26,3 +27,5 @@ class Rain extends Model
         return $this->belongsTo(Weather::class, 'rain_id');
     }
 }
+
+

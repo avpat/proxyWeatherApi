@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cordinate extends Model
 {
-    protected $fillable = ['latitude', 'name'];
+
+    protected $fillable = ['latitude', 'name', 'weather_id'];
 
     protected $with = ['longitude'];
     /**

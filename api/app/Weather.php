@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Weather extends Model
 {
-    protected $fillable = ['level', 'description'];
+    protected $guarded = [];
+
+    protected $fillable = ['source', 'forecast_period'];
 
     /**
      * Weather has cloud information

@@ -18,6 +18,8 @@ class CreateAddressesTable extends Migration
             $table->unsignedInteger('city_id');
             $table->unsignedInteger('country_id');
             $table->unsignedInteger('cordinate_id');
+//            $table->unsignedBigInteger('weather_id');
+//            $table->foreign('weather_id')->references('id')->on('weathers')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

@@ -14,8 +14,10 @@ class CreateRainTable extends Migration
     public function up()
     {
         Schema::create('rain', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->unsignedFloat('precipitation');
+            $table->unsignedBigInteger('weather_id');
+            $table->foreign('weather_id')->references('id')->on('weather')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

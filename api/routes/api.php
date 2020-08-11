@@ -14,12 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/weather', function (){
-    //dd("scalled");
-    $weather = [
-        'LONDON' => 'Sunny',
-        'MANCHESTER' => 'rain',
-        'ABERDEEN' => 'cold',
-    ];
-    return $weather;
-});
+Route::get('/weather', 'WeatherController@index');

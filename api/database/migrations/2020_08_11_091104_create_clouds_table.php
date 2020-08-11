@@ -14,8 +14,10 @@ class CreateCloudsTable extends Migration
     public function up()
     {
         Schema::create('clouds', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('cover');
+            $table->unsignedBigInteger('weather_id');
+            $table->foreign('weather_id')->references('id')->on('weather')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

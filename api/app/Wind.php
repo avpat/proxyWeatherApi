@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Wind extends Model
 {
-    protected $fillable = ['wind_speed', 'wind_direction'];
+
+    protected $fillable = ['weather_id', 'wind_speed', 'wind_direction'];
 
     /**
      * we don't need timestamp for wind table

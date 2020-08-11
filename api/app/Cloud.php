@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cloud extends Model
 {
-    protected $fillable = ['cover'];
+
+    protected $fillable = ['cover', 'weather_id'];
 
     /**
      * we don't need timestamp for cloud table
