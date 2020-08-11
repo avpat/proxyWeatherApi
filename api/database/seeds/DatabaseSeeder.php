@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CountryTableSeeder::class);
         $this->call(CityTableSeeder::class);
         $this->call(TemperatureTableSeeder::class);
+        $this->call(CordinateTableSeeder::class);
 
        // $this->call(AddressTableSeeder::class);
        // $this->call(WeatherTableSeeder::class);
