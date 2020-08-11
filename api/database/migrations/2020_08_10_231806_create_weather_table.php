@@ -17,6 +17,7 @@ class CreateWeatherTable extends Migration
             $table->bigIncrements('id');
             $table->string('forecast_period');
             $table->string('source');
+            $table->string('appid');
             $table->timestamps();
         });
     }
