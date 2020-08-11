@@ -13,8 +13,11 @@ class CreateSnowsTable extends Migration
      */
     public function up()
     {
+        //assuming snow will be counted as min and max value
         Schema::create('snows', function (Blueprint $table) {
             $table->id();
+            $table->integer('min_snow');
+            $table->integer('max_snow');
             $table->timestamps();
         });
     }

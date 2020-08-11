@@ -15,7 +15,6 @@ class CreateRainTable extends Migration
     {
         Schema::create('rain', function (Blueprint $table) {
             $table->id();
-            $table->unsignedFloat('wind_speed');
             $table->unsignedFloat('precipitation');
             $table->timestamps();
         });

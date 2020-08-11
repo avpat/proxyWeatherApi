@@ -15,8 +15,8 @@ class CreateTemperaturesTable extends Migration
     {
         Schema::create('temperatures', function (Blueprint $table) {
             $table->id();
-            $table->unsignedFloat('temp_min');
-            $table->unsignedFloat('temp_max');
+            $table->unsignedFloat('min_temp');
+            $table->unsignedFloat('max_temp');
             $table->timestamps();
         });
     }
