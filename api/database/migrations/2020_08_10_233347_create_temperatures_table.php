@@ -14,10 +14,9 @@ class CreateTemperaturesTable extends Migration
     public function up()
     {
         Schema::create('temperatures', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedFloat('min_temp');
-            $table->unsignedFloat('max_temp');
-            $table->timestamps();
+            $table->increments('id');
+            $table->decimal('min_temp', 4, 2);
+            $table->unsignedFloat('max_temp', 4, 2);
         });
     }
 

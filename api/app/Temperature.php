@@ -8,6 +8,12 @@ class Temperature extends Model
 {
     protected $fillable = ['min_temp', 'max_temp'];
 
+    /**
+     * we don't need timestamp for temp table
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 
     /**
      * Temperature belongs to Weather

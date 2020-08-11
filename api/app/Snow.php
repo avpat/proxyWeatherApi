@@ -8,6 +8,12 @@ class Snow extends Model
 {
     protected $fillable = ['min_snow', 'max_snow'];
 
+    /**
+     * we don't need timestamp for snow table
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 
     /**
      * Snow belongs to Weather

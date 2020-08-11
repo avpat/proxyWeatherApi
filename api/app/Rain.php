@@ -8,6 +8,13 @@ class Rain extends Model
 {
     protected $fillable = ['precipitation'];
 
+    /**
+     * we don't need timestamp for rain table
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
 
     /**
      * Cloud belongs to Weather

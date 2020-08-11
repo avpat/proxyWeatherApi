@@ -16,8 +16,7 @@ class CreateAirsTable extends Migration
         // can add air quality/pollution if needed
         Schema::create('airs', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedFloat('humidity');
-            $table->timestamps();
+            $table->string('humidity');
         });
     }
 

@@ -14,10 +14,9 @@ class CreateWindsTable extends Migration
     public function up()
     {
         Schema::create('winds', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->unsignedFloat('wind_speed');
-            $table->unsignedFloat('wind_direction');
-            $table->timestamps();
+            $table->string('wind_direction');
         });
     }
 

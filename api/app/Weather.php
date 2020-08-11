@@ -35,14 +35,6 @@ class Weather extends Model
         return $this->hasOne(Rain::class, 'rain_id');
     }
 
-    /**
-     * Weather has address information
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function address()
-    {
-        return $this->hasOne(Address::class, 'address_id');
-    }
 
     /**
      * Weather has snow information
@@ -60,6 +52,14 @@ class Weather extends Model
     public function temperature()
     {
         return $this->hasOne(Temperature::class, 'temperature_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function country()
+    {
+        return $this->hasOne(Country::class, 'country_id');
     }
 
 

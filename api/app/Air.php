@@ -9,7 +9,7 @@ class Air extends Model
     protected $fillable = ['humidity'];
 
     /**
-     * we don't need timestamp for section table
+     * we don't need timestamp for air table
      *
      * @var bool
      */

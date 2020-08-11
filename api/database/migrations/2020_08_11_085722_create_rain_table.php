@@ -14,9 +14,8 @@ class CreateRainTable extends Migration
     public function up()
     {
         Schema::create('rain', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->unsignedFloat('precipitation');
-            $table->timestamps();
         });
     }
 

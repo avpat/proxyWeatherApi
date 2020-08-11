@@ -13,10 +13,11 @@ class CreateCordinatesTable extends Migration
      */
     public function up()
     {
+        //Latitudes range from -90 to +90 (degrees), so DECIMAL(10, 8) is ok for that, but longitudes range from -180 to +180 (degrees) so you need DECIMAL(11, 8).
         Schema::create('cordinates', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedFloat('latitude');
-            $table->unsignedFloat('longitude');
+            $table->increments('id');
+            $table->decimal('longitude', 11, 8);
+            $table->decimal('latitude', 11, 8);
         });
     }
 

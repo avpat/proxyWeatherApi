@@ -8,6 +8,12 @@ class Wind extends Model
 {
     protected $fillable = ['wind_speed', 'wind_direction'];
 
+    /**
+     * we don't need timestamp for wind table
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 
     /**
      * Wind belongs to Weather

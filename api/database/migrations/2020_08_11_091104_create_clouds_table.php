@@ -14,10 +14,8 @@ class CreateCloudsTable extends Migration
     public function up()
     {
         Schema::create('clouds', function (Blueprint $table) {
-            $table->id();
-            $table->tinyInteger('level');
-            $table->unsignedFloat('description');
-            $table->timestamps();
+            $table->increments('id');
+            $table->string('cover');
         });
     }
 

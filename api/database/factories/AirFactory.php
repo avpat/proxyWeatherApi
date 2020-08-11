@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Air::class, function (Faker $faker) {
     return [
-        //
+        'humidity' => $faker->randomElement(['high', 'medium', 'low']),
     ];
 });

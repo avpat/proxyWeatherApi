@@ -14,10 +14,10 @@ class CreateAddressesTable extends Migration
     public function up()
     {
         Schema::create('addresses', function (Blueprint $table) {
-            $table->id();
-            $table->string('city_id');
-            $table->string('country_id');
-            $table->string('country_code');
+            $table->increments('id');
+            $table->unsignedInteger('city_id');
+            $table->unsignedInteger('country_id');
+            $table->unsignedInteger('cordinate_id');
         });
     }
 

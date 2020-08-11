@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Cloud::class, function (Faker $faker) {
     return [
-        //
+        'cover' => $faker->randomElement(['high', 'medium', 'low', 'clear']),
     ];
 });

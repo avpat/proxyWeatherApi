@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cloud extends Model
 {
-    protected $fillable = ['level', 'description'];
+    protected $fillable = ['cover'];
 
     /**
-     * we don't need timestamp for section table
+     * we don't need timestamp for cloud table
      *
      * @var bool
      */
