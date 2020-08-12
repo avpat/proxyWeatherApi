@@ -16,7 +16,7 @@ class Weather extends Model
      */
     public function cloud()
     {
-        return $this->hasOne(Cloud::class);
+        return $this->hasOne(Cloud::class)->select(['cover']);
     }
 
     /**
@@ -25,7 +25,7 @@ class Weather extends Model
      */
     public function air()
     {
-        return $this->hasOne(Air::class);
+        return $this->hasOne(Air::class)->select(['humidity']);
     }
 
     /**
@@ -34,7 +34,7 @@ class Weather extends Model
      */
     public function rain()
     {
-        return $this->hasOne(Rain::class);
+        return $this->hasOne(Rain::class)->select(['precipitation']);
     }
 
 
@@ -44,7 +44,7 @@ class Weather extends Model
      */
     public function snow()
     {
-        return $this->hasOne(Snow::class);
+        return $this->hasOne(Snow::class)->select(['min_snow', 'max_snow']);
     }
 
     /**
@@ -53,7 +53,7 @@ class Weather extends Model
      */
     public function temperature()
     {
-        return $this->hasOne(Temperature::class);
+        return $this->hasOne(Temperature::class)->select(['min_temp', 'max_temp']);
     }
 
     /**
@@ -61,7 +61,7 @@ class Weather extends Model
      */
     public function country()
     {
-        return $this->hasOne(Country::class);
+        return $this->hasOne(Country::class)->select(['code', 'name']);
     }
 
     /**
@@ -69,7 +69,12 @@ class Weather extends Model
      */
     public function city()
     {
-        return $this->hasOne(City::class);
+        return $this->hasOne(City::class)->select(['city_code', 'name']);
+    }
+
+    public function cordinate()
+    {
+        return $this->hasOne(Cordinate::class)->select(['latitude', 'longitude']);
     }
 
 

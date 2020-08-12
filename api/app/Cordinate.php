@@ -7,9 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Cordinate extends Model
 {
 
-    protected $fillable = ['latitude', 'name', 'weather_id'];
+    protected $fillable = ['latitude', 'longitude'];
 
-    protected $with = ['longitude'];
     /**
      * we don't need timestamp for cordinate table
      *
@@ -24,6 +23,6 @@ class Cordinate extends Model
      */
     public function cordinate()
     {
-        return $this->belongsTo(Address::class);
+        return $this->belongsTo(Weather::class);
     }
 }
