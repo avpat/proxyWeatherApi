@@ -6,6 +6,7 @@ use App\Forecast;
 use App\Http\Resources\WeatherResource;
 use App\Http\Resources\WeatherResourceCollection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\App;
 use Validator;
 
@@ -48,5 +49,21 @@ class WeatherController extends Controller
 
         return $forecast->getForecastByCodeAndApikey($request->code, $request->appId);
     }
+
+    /**
+     *
+     * call proxy api to get units list
+     * @return string
+     */
+
+    public function getTemperatureUnits()
+    {
+        $apikey = 'xyzzz';
+        $apiUrl = 'xyz.com/test/getunits';
+
+        return Http::get($apiUrl, $apikey)->json();
+    }
+
+
 
 }
