@@ -28,18 +28,20 @@ class Forecast extends Model
             if(!empty($code))
             {
                 $city = City::where('city_code', $code)->first();
-
+                //if it is not a city then check if it is a country
                 if (!$city) {
                     $country = Country::where('code', $code)->first();
                     if($country) {
-                        dd($country);
+                        //get capital of the found country
+                        $city = City::where('weather_id', $authorised->id)
+                            ->where('is_capital', 1)->first();
                     }
                 }
                 //if city is not valid then send appropriate error message
                 if (!$city) {
                     array_push($forecastData, [
                         'error' => [
-                            'message'       => 'Bad request. City not found',
+                            'message'       => 'Bad request. City or Country not found',
                             'statusCode'    => 400
                         ]
                     ]);

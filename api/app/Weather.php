@@ -69,7 +69,7 @@ class Weather extends Model
      */
     public function city()
     {
-        return $this->hasOne(City::class)->select(['city_code', 'name']);
+        return $this->hasOne(City::class)->select(['city_code', 'name', 'is_capital']);
     }
 
     public function cordinate()
