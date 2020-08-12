@@ -2,57 +2,51 @@
 
 namespace App\Http\Controllers;
 
+use App\Forecast;
 use App\Http\Resources\WeatherResource;
 use App\Http\Resources\WeatherResourceCollection;
 use Illuminate\Http\Request;
-use App\Weather;
-
-
+use Illuminate\Support\Facades\App;
+use Validator;
 
 class WeatherController extends Controller
 {
+
     /**
+     * Get forecast for the city by citycode and the app key
+     * This function does validation and calls forecasts model
+     *
      * @param Request $request
-     * @return WeatherResourceCollection
+     * @return array|\Illuminate\Http\JsonResponse
      */
-    public function getWeather(Request $request) : WeatherResourceCollection
+    public function getForecastByCityCodeAndApikey(Request $request)
     {
 
-        //get the weather report for the provided citycode and appid
+        $forecast = new Forecast();
 
-//        $request->validate([
-//            'cityid' => 'required',
-//            'appid' => 'required',
-//        ]);
-
-        $cityCode = $request->cityCode;
-//
-//        $weatherReport = Weather::where('id', '=', 80)->with(['city' => function($query) use ($cityCode){
-//            $query->where('city_code', '=', $cityCode);
-//        }]);
-
-        $weatherReport = Weather::find(80)->city;
-
-
-//        $weatherReport = Weather::where('id', '=', 80)->with(['city' => function($query) use ($cityCode){
-//            $query->where('city_code', '=', $cityCode);
-//        }]);
-
-//        $weatherReport->cities;
-      //  dd($weatherReport);
-        return new WeatherResourceCollection($weatherReport);
-    }
-
-    public function rules()
-    {
-        return [
-            'cityid' => 'required|max:3',
-            'appid' => 'required',
+        //validation
+        $rules = [
+            'cityCode'  => 'required|max:4',
+            'appId'     => 'required',
         ];
+        $messages = [
+            'cityCode.required'  => 'City code is required',
+            'appId.required'     => 'App key is required',
+        ];
+
+        $validator = Validator::make(['cityCode' => $request->cityCode, 'appId' => $request->appId ], $rules, $messages);
+
+        //if fails then return error message
+        if ($validator->fails()) {
+            return response()->json([
+                'error' => [
+                    'message'       => $validator->errors()->first(),
+                    'statusCode'    => 400
+                ]
+            ], 400);
+        }
+
+        return $forecast->getForecastByCityCodeAndApikey($request->cityCode, $request->appId);
     }
 
-    public function index(): WeatherResourceCollection
-    {
-        return new WeatherResourceCollection(Weather::class);
-    }
 }
