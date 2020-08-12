@@ -65,12 +65,12 @@ If you're using windows, you will need:
 <a id="your-comments"></a>
 ### Your comments (optional)
 
-* The test was fun to work on. Thanks for the opportunity 
+
 * It took approximately 10 hours
-* 
-* Ideally, I would use Apiresources but due to fraamework error and time limits I haad to remove it
+* I've used single resposibility and thin client approach
+* Ideally, I would use Apiresources but due to framework error and time limits I had to remove it
 
-
+* The test was fun to work on. Thanks for the opportunity 
 
 
 
