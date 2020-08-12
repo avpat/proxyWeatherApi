@@ -11,6 +11,6 @@ class AirTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Air::class, 10)->create();
+        factory(App\Air::class, 5)->create();
     }
 }

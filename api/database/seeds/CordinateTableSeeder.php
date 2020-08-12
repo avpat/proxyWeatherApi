@@ -11,6 +11,6 @@ class CordinateTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Cordinate::class, 10)->create();
+        factory(App\Cordinate::class, 5)->create();
     }
 }

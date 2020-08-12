@@ -9,6 +9,6 @@ $factory->define(Cordinate::class, function (Faker $faker) {
     return [
         'longitude'     => $faker->longitude,
         'latitude'      => $faker->latitude,
-        'weather_id'      => factory(App\Weather::class)
+        'weather_id'    => App\Weather::all()->random()->id
     ];
 });

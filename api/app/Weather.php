@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Weather extends Model
 {
-    protected $guarded = [];
+   // protected $guarded = [];
 
-    protected $fillable = ['source', 'forecast_period'];
+    protected $fillable = ['source', 'forecast_period', 'appid'];
 
     /**
      * Weather has cloud information
@@ -16,7 +16,7 @@ class Weather extends Model
      */
     public function cloud()
     {
-        return $this->hasOne(Cloud::class, 'cloud_id');
+        return $this->hasOne(Cloud::class);
     }
 
     /**
@@ -25,7 +25,7 @@ class Weather extends Model
      */
     public function air()
     {
-        return $this->hasOne(Air::class, 'air_id');
+        return $this->hasOne(Air::class);
     }
 
     /**
@@ -34,7 +34,7 @@ class Weather extends Model
      */
     public function rain()
     {
-        return $this->hasOne(Rain::class, 'rain_id');
+        return $this->hasOne(Rain::class);
     }
 
 
@@ -44,7 +44,7 @@ class Weather extends Model
      */
     public function snow()
     {
-        return $this->hasOne(Snow::class, 'snow_id');
+        return $this->hasOne(Snow::class);
     }
 
     /**
@@ -53,7 +53,7 @@ class Weather extends Model
      */
     public function temperature()
     {
-        return $this->hasOne(Temperature::class, 'temperature_id');
+        return $this->hasOne(Temperature::class);
     }
 
     /**
@@ -61,8 +61,17 @@ class Weather extends Model
      */
     public function country()
     {
-        return $this->hasOne(Country::class, 'country_id');
+        return $this->hasOne(Country::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function city()
+    {
+        return $this->hasOne(City::class);
+    }
+
 
 
 }

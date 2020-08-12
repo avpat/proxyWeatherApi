@@ -11,6 +11,6 @@ use Faker\Generator as Faker;
 $factory->define(Air::class, function (Faker $faker) {
     return [
         'humidity'      => $faker->randomElement(['high', 'medium', 'low']),
-        'weather_id'    => factory(App\Weather::class)
+        'weather_id'      => App\Weather::all()->random()->id
     ];
 });

@@ -13,5 +13,8 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+//by city id
 
-Route::get('/weather', 'WeatherController@index');
+//Route::apiResource('/data', 'WeatherController');
+
+Route::get('/data/cityid={cityCode}&appid={appId}', 'WeatherController@getWeather')->name('Weather.list');

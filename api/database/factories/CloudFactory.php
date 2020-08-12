@@ -8,6 +8,6 @@ use Faker\Generator as Faker;
 $factory->define(Cloud::class, function (Faker $faker) {
     return [
         'cover'         => $faker->randomElement(['high', 'medium', 'low', 'clear']),
-        'weather_id'    => factory(App\Weather::class)
+        'weather_id'      => App\Weather::all()->random()->id
     ];
 });

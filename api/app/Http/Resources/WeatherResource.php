@@ -14,6 +14,11 @@ class WeatherResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+//        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'duration' => $this->forecast_period,
+            'source' => $this->source
+        ];
     }
 }

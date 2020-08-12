@@ -13,6 +13,7 @@ $factory->define(City::class, function (Faker $faker) {
         'city_code'     => strtoupper(substr($city, 0, 3)),
         'name'          => $city,
         'is_capital'    => $faker->numberBetween(0,1),
-        'country_id'    => factory(App\Country::class)
+        'country_id'    => App\Country::all()->random()->id,
+        'weather_id'      => App\Weather::all()->random()->id
     ];
 });

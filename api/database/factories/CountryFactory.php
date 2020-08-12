@@ -11,6 +11,6 @@ $factory->define(Country::class, function (Faker $faker) {
     return [
         'code'          =>  strtoupper(substr($country, 0, 2)),
         'name'          =>  $country,
-        'weather_id'    =>  factory(App\Weather::class)
+        'weather_id'    => App\Weather::all()->random()->id
     ];
 });

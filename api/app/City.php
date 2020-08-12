@@ -8,7 +8,7 @@ class City extends Model
 {
     protected $guarded = [];
 
-    protected $fillable = ['country_id', 'city_code', 'name', 'is_capital'];
+    protected $fillable = ['country_id','weather_id', 'city_code', 'name', 'is_capital'];
 
     /**
      * we don't need timestamp for city table
@@ -26,5 +26,11 @@ class City extends Model
     {
 
         return $this->belongsTo(Country::class, 'city_id');
+    }
+
+    public function weather()
+    {
+
+        return $this->belongsTo(Weather::class, 'city_id');
     }
 }

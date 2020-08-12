@@ -9,6 +9,6 @@ $factory->define(Snow::class, function (Faker $faker) {
     return [
         'min_snow'   =>  $faker->randomFloat(null, 0, 2),
         'max_snow'   =>  $faker->randomFloat(null, 0, 10),
-        'weather_id'      => factory(App\Weather::class)
+        'weather_id' => App\Weather::all()->random()->id
     ];
 });
