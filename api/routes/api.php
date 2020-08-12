@@ -18,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 //Route::apiResource('/data', 'WeatherController');
 
 Route::get('/data/code={code}&appid={appId}', 'WeatherController@getForecastByCodeAndApikey')->name('Weather.city');
+
+Route::get('/temperature/units', 'WeatherController@getTemperatureUnits')->name('Temperature.units');
