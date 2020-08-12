@@ -9,12 +9,12 @@ class Forecast extends Model
 {
     /**
      * based on the openweathermap api https://samples.openweathermap.org/data/2.5/weather?id=2172797&appid=439d4b804bc8187953eb36d2a8c26a02
-     * Note:
-     * @param $cityCode
+     *
+     * @param $code
      * @param $appId
      * @return array|\Illuminate\Http\JsonResponse
      */
-    public function getForecastByCityCodeAndApikey($cityCode, $appId)
+    public function getForecastByCodeAndApikey($code, $appId)
     {
         //define an array for the forecast
         $forecastData = [];
@@ -25,9 +25,16 @@ class Forecast extends Model
         if($authorised)
         {
             //get the city and weather id by city code
-            if(!empty($cityCode))
+            if(!empty($code))
             {
-                $city = City::where('city_code', $cityCode)->first();
+                $city = City::where('city_code', $code)->first();
+
+                if (!$city) {
+                    $country = Country::where('code', $code)->first();
+                    if($country) {
+                        dd($country);
+                    }
+                }
                 //if city is not valid then send appropriate error message
                 if (!$city) {
                     array_push($forecastData, [

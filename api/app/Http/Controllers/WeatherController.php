@@ -13,28 +13,28 @@ class WeatherController extends Controller
 {
 
     /**
-     * Get forecast for the city by citycode and the app key
+     * Get forecast for the by citycode/countrycode and the app key
      * This function does validation and calls forecasts model
      *
      * @param Request $request
      * @return array|\Illuminate\Http\JsonResponse
      */
-    public function getForecastByCityCodeAndApikey(Request $request)
+    public function getForecastByCodeAndApikey(Request $request)
     {
 
         $forecast = new Forecast();
 
         //validation
         $rules = [
-            'cityCode'  => 'required|max:4',
+            'code'  => 'required|max:4',
             'appId'     => 'required',
         ];
         $messages = [
-            'cityCode.required'  => 'City code is required',
+            'code.required'      => 'City code / Country code is required',
             'appId.required'     => 'App key is required',
         ];
 
-        $validator = Validator::make(['cityCode' => $request->cityCode, 'appId' => $request->appId ], $rules, $messages);
+        $validator = Validator::make(['code' => $request->code, 'appId' => $request->appId ], $rules, $messages);
 
         //if fails then return error message
         if ($validator->fails()) {
@@ -46,7 +46,7 @@ class WeatherController extends Controller
             ], 400);
         }
 
-        return $forecast->getForecastByCityCodeAndApikey($request->cityCode, $request->appId);
+        return $forecast->getForecastByCodeAndApikey($request->code, $request->appId);
     }
 
 }
