@@ -27,13 +27,4 @@ class Country extends Model
         return $this->hasMany(City::class, 'country_id');
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-//    public function address()
-//    {
-//        return $this->belongsTo(Address::class);
-//    }
-
-
 }

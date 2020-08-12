@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Weather extends Model
 {
-   // protected $guarded = [];
 
     protected $fillable = ['source', 'forecast_period', 'appid'];
 
@@ -76,7 +75,4 @@ class Weather extends Model
     {
         return $this->hasOne(Cordinate::class)->select(['latitude', 'longitude']);
     }
-
-
-
 }

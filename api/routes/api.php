@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-//by city id
+//by city id and countrycode
 
 //Route::apiResource('/data', 'WeatherController');
 

@@ -26,8 +26,8 @@ class WeatherController extends Controller
 
         //validation
         $rules = [
-            'code'  => 'required|max:4',
-            'appId'     => 'required',
+            'code'      => 'required|max:4',
+            'appId'     => 'required|min:7',
         ];
         $messages = [
             'code.required'      => 'City code / Country code is required',
