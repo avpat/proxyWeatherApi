@@ -1,18 +1,12 @@
 
 
-# MANGAHIGH - coding test
+#proxy Weather Api
 
 ***
 
 **Table of Contents**
 
 * [Presentation](#presentation)
-* [Prerequisites](#prerequisites)
-* [About your implementation](#about-your-implementation)
-* [Your dev environment](#your-dev-environment)
-* [The task](#the-task)
-* [About you](#about-you)
-    * [Your comments](#your-comments) (optional)
 
 
 <a id="presentation"></a>
@@ -27,11 +21,6 @@ We should be able to get the temperatures for a city by a city code (e.g. LDN fo
 
 The proxy API should get the temperatures in Celsius from the 3rd party API and display them in Celsius, Kelvin and Fahrenheit.
 
-Implementation
-PHP (you may use any available open source packages through composer)
-
-Deadline
-Send the zipped source via email to me or upload it to a version control repository hosting service like Github, Bitbucket or other by the end of Sunday 9th of August. Please ensure you CC valter.cunha@mangahigh.com in your answer.
 
 <a id="prerequisites"></a>
 ## Prerequisites
@@ -42,49 +31,6 @@ If you're using Mac OS, you will need:
 If you're using windows, you will need:
 * [Docker toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/) to use Docker and creating containers under windows
 * put this whole folder inside `C/Users/Public` (to avoid having volume mounting issues)
-
-<a id="about-your-implementation"></a>
-## About your implementation
-
-* Fill the [About you](#about-you) section below.
-* If you have any notes to add to your test, please add them in the [Your comments](#your-comments) section below.
-* Send a zip file with your completed entry to [peter.ward@pod-point.com](mailto:peter.ward@pod-point.com).
-
-<a id="your-dev-environment"></a>
-
-
-***
-
-<a id="about-you"></a>
-## Applicant
-
-* **First name:** `Abhijeet`
-* **Last name:** `Patil`
-
-
-<a id="your-comments"></a>
-### Your comments (optional)
-
-
-* It took approximately 10 hours
-* I've used single resposibility and thin client approach
-* Ideally, I would use Apiresources but due to framework error and time limits I had to remove it
-
-* The test was fun to work on. Thanks for the opportunity 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <a id="the-installation"></a>
